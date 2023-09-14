@@ -1,0 +1,21 @@
+CREATE TABLE statuses (
+    id INT PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
+    name TEXT NOT NULL
+);
+CREATE TABLE contracts (
+    id INT PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
+    name TEXT UNIQUE NOT NULL,
+    creation_date DATE DEFAULT CURRENT_DATE,
+    signing_date DATE,
+    status_id INT,
+    project_id INT DEFAULT NULL,
+    FOREIGN KEY (status_id) REFERENCES statuses(id) ON DELETE CASCADE
+);
+CREATE TABLE projects (
+    id INT PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
+    name TEXT UNIQUE NOT NULL,
+    creation_date DATE DEFAULT CURRENT_DATE,
+    active_contract_id INT UNIQUE DEFAULT NULL,
+    FOREIGN KEY (active_contract_id) REFERENCES contracts(id) ON DELETE CASCADE
+);
+ALTER TABLE contracts ADD CONSTRAINT projectpk FOREIGN KEY (project_id) REFERENCES projects (id) ON DELETE CASCADE;

@@ -1,0 +1,1 @@
+INSERT INTO statuses (name) VALUES ('draft'), ('active'), ('completed');
