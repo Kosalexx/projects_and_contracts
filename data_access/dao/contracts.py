@@ -3,11 +3,11 @@ from __future__ import annotations
 from typing import Optional
 
 from psycopg2.errors import IntegrityError
-from statuses import StatusesDAO
 
 from data_access.dto import ContractsDTO
 
 from .base import BaseDAO
+from .statuses import StatusesDAO
 
 
 class ContractsDAO(BaseDAO):
