@@ -9,18 +9,20 @@ Projects_and_contracts is a Python console program for creating, modifying, and 
 
 1. Entities:
 
-A contract contains the following fields: 
-    - id
-    - contract name, 
-    - creation date (assigned at the moment of entity creation),
-    - date of signing the contract, 
-    - contract status (draft, active, completed), 
-    - project (in which this contract is used)
+A Contract contains the following fields: 
+- id
+- contract name, 
+- creation date (assigned at the moment of entity creation),
+- date of signing the contract, 
+- contract status (draft, active, completed), 
+- project (in which this contract is used)
+
 The project contains the following fields: 
-    - id
-    - project name 
-    - creation date (assigned at the moment of entity creation), 
-    - link to the active contract
+- id
+- project name 
+- creation date (assigned at the moment of entity creation), 
+- link to the active contract
+
 2. Logic
 
 By default the contract is created in draft status, the user can change its status through the action "Confirm contract" (active), "Finalize contract" (completed).
